@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class Array {
     public static boolean array11(String string) {
         if (string == null || string.length() == 0) {
@@ -126,5 +123,75 @@ public class Array {
             }
         }
         return chars;
+    }
+
+    public static char[][] array16(char[][] chars) {
+        if (chars == null || chars.length == 0 || chars[0].length == 0) {
+            return null;
+        }
+        for (int i = 0; i < chars.length / 2; i++) {
+            for (int j = i; j < chars[0].length - 1 - i; j++) {
+//                char temp1 = chars[j][chars.length - 1 - i];
+//                chars[j][chars.length - 1 - i] = chars[i][j];
+//                char temp2 = chars[chars.length - 1 - i][chars.length - 1 - j];
+//                chars[chars.length - 1 - i][chars.length - 1 - j] = temp1;
+//                temp1 = chars[chars.length - 1 - j][i];
+//                chars[chars.length - 1 - j][i] = temp2;
+//                chars[i][j] = temp1;
+                /**用一个temp交换**/
+            }
+        }
+        return chars;
+    }
+
+    public static int[][] array17(int[][] chars) {
+        if (chars == null || chars.length == 0 || chars[0].length == 0) {
+            return null;
+        }
+        boolean[] set1 = new boolean[chars.length];
+        boolean[] set2 = new boolean[chars[0].length];
+        for (int i = 0; i < chars.length; i++) {
+            for (int j = i; j < chars[0].length; j++) {
+                if (chars[i][j] == 0) {
+                    set1[i] = true;
+                    set2[j] = true;
+                }
+            }
+        }
+
+        for (int i = 0; i < chars.length; i++) {
+            for (int j = i; j < chars[0].length; j++) {
+                if (set1[i] || set2[j]) {
+                    chars[i][j] = 0;
+                }
+            }
+        }
+        return chars;
+    }
+
+    public static boolean array18(String string1, String string2) {
+//        for (int i = 0; i < string1.length(); i++) {
+//            int index = i;
+//            int subIndex = 0;
+//            boolean isMatched = false;
+//            for (int j = 0; j < string2.length(); j++) {
+//                if (string1.charAt(index) == string2.charAt(j)) {
+//                    subIndex = j;
+//                    index++;
+//                    isMatched = true;
+//                } else {
+//                    isMatched = false;
+//                }
+//            }
+//            if (isMatched) {
+//                return isSubstring(string2.substring(0, subIndex), string1);
+//            }
+//        }
+        /**旋转前字符串是xy，旋转后是yx，只要判断yx是不是xyxy的子串就可以。。**/
+        return false;
+    }
+
+    private static boolean isSubstring(String string1, String string2) {
+        return true;
     }
 }
